@@ -1,7 +1,7 @@
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const HouseFilter = ({ allHouses }) => {
-  const history = useHistory();
+  const history = useNavigate();
   const countries = allHouses
     ? Array.from(new Set(allHouses.map((h) => h.country)))
     : [];
