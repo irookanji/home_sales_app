@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useMemo } from "react";
 
 const useFeaturedHouse = (allHouses) => {
   const featuredHouse = useMemo(() => {

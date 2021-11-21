@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 
 const useHouses = () => {
-  const [allHouses, setAllhouses] = useState([]);
+  const [allHouses, setAllHouses] = useState([]);
 
   useEffect(() => {
     const fetchHouses = async () => {
       const rsp = await fetch("/houses.json");
       const houses = await rsp.json();
-      setAllhouses(houses);
+      setAllHouses(houses);
     };
     fetchHouses();
   }, []);

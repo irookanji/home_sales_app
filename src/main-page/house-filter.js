@@ -1,13 +1,17 @@
+import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import HousesContext from "../context/houseContext";
 
-const HouseFilter = ({ allHouses }) => {
+const HouseFilter = () => {
   const history = useNavigate();
+  const allHouses = useContext(HousesContext);
+
   const countries = allHouses
     ? Array.from(new Set(allHouses.map((h) => h.country)))
     : [];
   countries.unshift(null);
 
-  const onSearchCHange = (e) => {
+  const onSearchChange = (e) => {
     const country = e.target.value;
     history.push(`/searchresults/${country}`);
   };
@@ -18,7 +22,7 @@ const HouseFilter = ({ allHouses }) => {
         Look for your dream house in country:
       </div>
       <div className="col-md-4 mb-3">
-        <select className="form-select" onChange={onSearchCHange}>
+        <select className="form-select" onChange={onSearchChange}>
           {countries.map((c) => (
             <option key={c} value={c}>
               {c}

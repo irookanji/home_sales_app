@@ -3,6 +3,7 @@ import "./search-results.css";
 
 const SearchResultsRow = ({ house }) => {
   const history = useNavigate();
+
   const setActive = () => {
     history.push(`/house/${house.id}`);
   };
