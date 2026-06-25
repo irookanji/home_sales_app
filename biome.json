@@ -1,0 +1,56 @@
+{
+	"$schema": "https://biomejs.dev/schemas/2.5.1/schema.json",
+	"vcs": {
+		"enabled": true,
+		"clientKind": "git",
+		"useIgnoreFile": true
+	},
+	"files": {
+		"ignoreUnknown": false,
+		"includes": ["src/**", "biome.json", "rsbuild.config.mjs", "vitest.config.mjs"]
+	},
+	"formatter": {
+		"enabled": true,
+		"indentStyle": "tab"
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"preset": "recommended",
+			"correctness": {
+				"noUnusedVariables": "warn"
+			}
+		}
+	},
+	"javascript": {
+		"formatter": {
+			"quoteStyle": "double"
+		},
+		"globals": []
+	},
+	"assist": {
+		"enabled": true,
+		"actions": {
+			"source": {
+				"organizeImports": "on"
+			}
+		}
+	},
+	"overrides": [
+		{
+			"includes": ["**/*.test.js", "**/*.test.jsx"],
+			"javascript": {
+				"globals": [
+					"vi",
+					"describe",
+					"it",
+					"expect",
+					"beforeEach",
+					"afterEach",
+					"beforeAll",
+					"afterAll"
+				]
+			}
+		}
+	]
+}

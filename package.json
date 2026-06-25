@@ -2,30 +2,34 @@
   "name": "home_sales_app",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=20.19.0"
+  },
   "dependencies": {
-    "@testing-library/jest-dom": "^5.15.0",
-    "@testing-library/react": "^11.2.7",
-    "@testing-library/user-event": "^12.8.3",
-    "bootstrap": "^5.1.3",
-    "prop-types": "^15.7.2",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-router": "^6.0.2",
-    "react-router-dom": "^6.0.2",
-    "react-scripts": "4.0.3",
-    "web-vitals": "^1.1.2"
+    "bootstrap": "5.3.8",
+    "react": "19.2.7",
+    "react-dom": "19.2.7",
+    "react-router-dom": "7.18.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.5.1",
+    "@rsbuild/core": "2.0.15",
+    "@rsbuild/plugin-react": "2.1.0",
+    "@testing-library/react": "16.3.2",
+    "@vitejs/plugin-react": "6.0.3",
+    "jsdom": "29.1.1",
+    "knip": "6.20.0",
+    "vitest": "4.1.9"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "start": "rsbuild dev",
+    "build": "rsbuild build",
+    "preview": "rsbuild preview",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "biome check --write src",
+    "lint:ci": "biome ci src",
+    "knip": "node ./node_modules/knip/bin/knip.js"
   },
   "browserslist": {
     "production": [
