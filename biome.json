@@ -1,5 +1,5 @@
 {
-	"$schema": "https://biomejs.dev/schemas/2.5.1/schema.json",
+	"$schema": "https://biomejs.dev/schemas/2.5.2/schema.json",
 	"vcs": {
 		"enabled": true,
 		"clientKind": "git",
@@ -7,7 +7,12 @@
 	},
 	"files": {
 		"ignoreUnknown": false,
-		"includes": ["src/**", "biome.json", "rsbuild.config.mjs", "vitest.config.mjs"]
+		"includes": [
+			"src/**",
+			"biome.json",
+			"rsbuild.config.mjs",
+			"vitest.config.mjs"
+		]
 	},
 	"formatter": {
 		"enabled": true,
